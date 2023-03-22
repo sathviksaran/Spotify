@@ -10,9 +10,21 @@
 <body>
     <nav>
         <ul>
-            <li class="brand"><img src="logo.png" alt="Spotify"> Spotify</li>
-            <li>Home</li>
-            <li>About</li> 
+            <li class="brand"><img class="btn" src="images/logo.png" alt="Spotify"> Spotify</li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li>
+                <div class="dropdown">
+                    <button class="dropbtn">Dropdown 
+                      <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                      <a href="#">Link 1</a>
+                      <a href="#">Link 2</a>
+                      <a href="#">Link 3</a>
+                    </div>
+                  </div>
+            </li>
         </ul>
     </nav>
 
@@ -84,10 +96,10 @@
             <i class="fa-solid fa-3x fa-forward-step" id="next"></i>
         </div>
         <div class="songInfo">
-            <img src="playing.gif" width="42px" alt="" id="gif"> <span id="masterSongName">Your Eyes</span>
+            <img src="images/playing.gif" width="42px" alt="" id="gif"> <span id="masterSongName">Your Eyes</span>
         </div>
     </div>
     <script src="https://kit.fontawesome.com/5fcf5458b0.js" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    <script src="telugu.js"></script>
 </body>
 </html>

@@ -2,7 +2,7 @@ console.log("Welcome to Spotify")
 
 //Initialize the variables
 let songIndex = 0;
-let audioElement = new Audio('songs/1.mp3');
+let audioElement = new Audio('general/songs/1.mp3');
 let masterPlay = document.getElementById('masterPlay');
 let myProgressBar = document.getElementById('myProgressBar');
 let gif = document.getElementById('gif');
@@ -10,16 +10,16 @@ let masterSongName = document.getElementById('masterSongName');
 let songItems = Array.from(document.getElementsByClassName('songItem'));
 
 let songs = [
-    {songName: "Your Eyes", filePath: "songs/1.mp3", coverPath: "covers/cover1.jpg"},
-    {songName: "Play Date", filePath: "songs/2.mp3", coverPath: "covers/cover2.jpg"},
-    {songName: "SaiRat Zaale ji", filePath: "songs/3.mp3", coverPath: "covers/cover3.jpg"},
-    {songName: "Shikhayat", filePath: "songs/4.mp3", coverPath: "covers/cover4.jpg"},
-    {songName: "Love Story", filePath: "songs/5.mp3", coverPath: "covers/cover5.jpg"},
-    {songName: "Day Dreamin", filePath: "songs/6.mp3", coverPath: "covers/cover6.jpg"},
-    {songName: "Tera Chehra", filePath: "songs/7.mp3", coverPath: "covers/cover7.jpg"},
-    {songName: "Kolu Kolu", filePath: "songs/8.mp3", coverPath: "covers/cover8.jpg"},
-    {songName: "Jab Saiyaan", filePath: "songs/9.mp3", coverPath: "covers/cover9.jpg"},
-    {songName: "Naa Madhi", filePath: "songs/10.mp3", coverPath: "covers/cover10.jpg"},
+    {songName: "Your Eyes", filePath: "general/songs/1.mp3", coverPath: "general/covers/cover1.jpg"},
+    {songName: "Play Date", filePath: "general/songs/2.mp3", coverPath: "general/covers/cover2.jpg"},
+    {songName: "SaiRat Zaale ji", filePath: "general/songs/3.mp3", coverPath: "general/covers/cover3.jpg"},
+    {songName: "Shikhayat", filePath: "general/songs/4.mp3", coverPath: "general/covers/cover4.jpg"},
+    {songName: "Love Story", filePath: "general/songs/5.mp3", coverPath: "general/covers/cover5.jpg"},
+    {songName: "Day Dreamin", filePath: "general/songs/6.mp3", coverPath: "general/covers/cover6.jpg"},
+    {songName: "Tera Chehra", filePath: "general/songs/7.mp3", coverPath: "general/covers/cover7.jpg"},
+    {songName: "Kolu Kolu", filePath: "general/songs/8.mp3", coverPath: "general/covers/cover8.jpg"},
+    {songName: "Jab Saiyaan", filePath: "general/songs/9.mp3", coverPath: "general/covers/cover9.jpg"},
+    {songName: "Naa Madhi", filePath: "general/songs/10.mp3", coverPath: "general/covers/cover10.jpg"},
 ]
 
 songItems.forEach((element,i)=>{
@@ -56,7 +56,7 @@ audioElement.addEventListener('timeupdate', ()=>{
         {
             songIndex=0;
         }
-        audioElement.src = `songs/${songIndex+1}.mp3`;
+        audioElement.src = `general/songs/${songIndex+1}.mp3`;
         masterSongName.innerText = songs[songIndex].songName;
         audioElement.currentTime = 0;
         audioElement.play();
@@ -81,7 +81,7 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
         index = parseInt(e.target.id);
         e.target.classList.remove('fa-circle-play');
         e.target.classList.add('fa-circle-pause');
-        audioElement.src = `songs/${index+1}.mp3`;
+        audioElement.src = `general/songs/${index+1}.mp3`;
         masterSongName.innerText = songs[songIndex].songName;
         audioElement.currentTime = 0;
         audioElement.play();
@@ -98,7 +98,7 @@ document.getElementById('next').addEventListener('click', ()=>{
     else{
         songIndex += 1;
     }
-    audioElement.src = `songs/${songIndex+1}.mp3`;
+    audioElement.src = `general/songs/${songIndex+1}.mp3`;
     masterSongName.innerText = songs[songIndex].songName;
     audioElement.currentTime = 0;
     audioElement.play();
@@ -113,7 +113,7 @@ document.getElementById('previous').addEventListener('click', ()=>{
     else{
         songIndex -= 1;
     }
-    audioElement.src = `songs/${songIndex+1}.mp3`;
+    audioElement.src = `general/songs/${songIndex+1}.mp3`;
     masterSongName.innerText = songs[songIndex].songName;
     audioElement.currentTime = 0;
     audioElement.play();

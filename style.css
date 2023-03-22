@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
 body{
     background-color: antiquewhite;
 }
-
 
 nav{
     font-family: 'Ubuntu', sans-serif;
@@ -11,13 +13,22 @@ nav ul{
     display: flex;
     align-items: center;
     list-style-type: none;
-    height: 89px;
-    background-color: black;
+    height: 47px;
+    background-color: #333;
     color: white;
 }
 
 nav ul li{
     padding: 0 12px;
+}
+
+nav ul li a{
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
 
 .brand img{
@@ -47,3 +58,187 @@ nav ul li{
     border-radius: 50px;
 }
 
+.container{
+    min-height: 72vh;
+    background-color: black;
+    color: white;
+    font-family: 'Varela Round', sans-serif;
+    display: flex;
+    margin: 23px auto;
+    width: 90%;
+    border-radius: 12px;
+    padding: 34px;
+    background-image: url('images/bg.jpg');
+    background-image: image();
+}
+
+.bottom{
+    position: sticky;
+    height: 80px;
+    background-color: black;
+    color: white;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.icons{
+    margin-top: 14px;
+}
+
+.icons i{
+    cursor: pointer;
+}
+
+#myProgressBar{
+    width: 80vw;
+    cursor: pointer;
+}
+
+.songItemContainer{
+    margin-top: 74px;
+}
+
+.songItem{
+    height: 50px;
+    display: flex;
+    background-color: white;
+    color: black;
+    margin: 12px 0;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 34px;
+}
+
+.songItem img{
+    width: 43px;
+    margin: 0 23px;
+    border-radius: 34px;
+}
+
+.timestamp{
+    margin: 0 23px;
+}
+
+.timestamp i{
+    cursor: pointer;
+}
+
+.songInfo{
+    position: absolute;
+    left: 10vw;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.songInfo img{
+    opacity: 0;
+    transition: opacity 0.4s ease-in;
+}
+
+@media only screen and (max-width: 1100px) {
+    body{
+        background-color: red;
+    }
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .dropdown .dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    cursor: pointer;
+  }
+  
+  nav ul li a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: greenyellow;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .songclassification{
+    min-height: 10vh;
+    background-color: rgb(80, 80, 197);
+    color: white;
+    font-family: 'Varela Round', sans-serif;
+    display: table;
+    margin: 23px auto;
+    width: 90%;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.songclassification .languages{
+    min-height: 30vh;
+    background-color: whitesmoke;
+    color: white;
+    font-family: 'Varela Round', sans-serif;
+    display: table;
+    margin: 15px auto;
+    width: 80%;
+    border-radius: 12px;
+    padding: 0px;
+}
+
+.songclassification .categories{
+    min-height: 30vh;
+    background-color: whitesmoke;
+    color: white;
+    font-family: 'Varela Round', sans-serif;
+    display: table;
+    margin: 15px auto;
+    width: 80%;
+    border-radius: 12px;
+    padding: 0px;
+}
+
+.songclassification .Albums{
+    min-height: 30vh;
+    background-color: whitesmoke;
+    color: white;
+    font-family: 'Varela Round', sans-serif;
+    display: table;
+    margin: 15px auto;
+    width: 80%;
+    border-radius: 12px;
+    padding: 0px;
+}
+
+h3 {
+    color: crimson;
+    font-weight: bolder;
+}
