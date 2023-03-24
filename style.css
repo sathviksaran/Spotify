@@ -242,3 +242,10 @@ h3 {
     color: crimson;
     font-weight: bolder;
 }
+
+.heading {
+    border-radius: 50px;
+    background-color: yellow;
+    padding: 1px;
+    margin: 10px 40px;
+}

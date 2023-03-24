@@ -7,6 +7,7 @@ let masterPlay = document.getElementById('masterPlay');
 let myProgressBar = document.getElementById('myProgressBar');
 let gif = document.getElementById('gif');
 let masterSongName = document.getElementById('masterSongName');
+let title = document.getElementById('title');
 let songItems = Array.from(document.getElementsByClassName('songItem'));
 
 let songs = [
@@ -22,6 +23,7 @@ let songs = [
     {songName: "Naa Madhi", filePath: "general/songs/10.mp3", coverPath: "general/covers/cover10.jpg"},
 ]
 
+
 songItems.forEach((element,i)=>{
     element.getElementsByTagName("img")[0].src = songs[i].coverPath;
     element.getElementsByClassName("songName")[0].innerText = songs[i].songName;
@@ -33,12 +35,14 @@ masterPlay.addEventListener('click', ()=>{
         masterPlay.classList.remove('fa-circle-play');
         masterPlay.classList.add('fa-circle-pause');
         gif.style.opacity=1;
+        title.innerText = songs[songIndex].songName;
     }
     else{
         audioElement.pause();
         masterPlay.classList.remove('fa-circle-pause');
         masterPlay.classList.add('fa-circle-play');
         gif.style.opacity=0;
+        title.innerText = songs[songIndex].songName;
     }
 })
 // Listen to Events
@@ -58,6 +62,7 @@ audioElement.addEventListener('timeupdate', ()=>{
         }
         audioElement.src = `general/songs/${songIndex+1}.mp3`;
         masterSongName.innerText = songs[songIndex].songName;
+        title.innerText = songs[songIndex].songName;
         audioElement.currentTime = 0;
         audioElement.play();
         masterPlay.classList.remove('fa-circle-play');
@@ -83,6 +88,7 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
         e.target.classList.add('fa-circle-pause');
         audioElement.src = `general/songs/${index+1}.mp3`;
         masterSongName.innerText = songs[songIndex].songName;
+        title.innerText = songs[songIndex].songName;
         audioElement.currentTime = 0;
         audioElement.play();
         gif.style.opacity = 1;
@@ -100,6 +106,7 @@ document.getElementById('next').addEventListener('click', ()=>{
     }
     audioElement.src = `general/songs/${songIndex+1}.mp3`;
     masterSongName.innerText = songs[songIndex].songName;
+    title.innerText = songs[songIndex].songName;
     audioElement.currentTime = 0;
     audioElement.play();
     masterPlay.classList.remove('fa-circle-play');
@@ -115,6 +122,7 @@ document.getElementById('previous').addEventListener('click', ()=>{
     }
     audioElement.src = `general/songs/${songIndex+1}.mp3`;
     masterSongName.innerText = songs[songIndex].songName;
+    title.innerText = songs[songIndex].songName;
     audioElement.currentTime = 0;
     audioElement.play();
     masterPlay.classList.remove('fa-circle-play');
