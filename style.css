@@ -16,6 +16,9 @@ nav ul{
     height: 47px;
     background-color: #333;
     color: white;
+    margin: 23px auto;
+    width: 92%;
+    border-radius: 12px;
 }
 
 nav ul li{
