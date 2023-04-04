@@ -87,8 +87,8 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
         e.target.classList.remove('fa-circle-play');
         e.target.classList.add('fa-circle-pause');
         audioElement.src = `telugu/songs/${index+1}.mp3`;
-        masterSongName.innerText = songs[songIndex].songName;
-        title.innerText = songs[songIndex].songName;
+        masterSongName.innerText = songs[index].songName;
+        title.innerText = songs[index].songName;
         audioElement.currentTime = 0;
         audioElement.play();
         gif.style.opacity = 1;
