@@ -28,6 +28,30 @@ songItems.forEach((element,i)=>{
     element.getElementsByTagName("img")[0].src = songs[i].coverPath;
     element.getElementsByClassName("songName")[0].innerText = songs[i].songName;
 })
+
+const makeAllPlays = ()=>{
+    Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
+        element.classList.remove('fa-circle-pause');
+        element.classList.add('fa-circle-play');
+    })
+}
+Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
+    element.addEventListener('click', (e)=>{
+        makeAllPlays();
+        index = parseInt(e.target.id);
+        songIndex = index;
+        e.target.classList.remove('fa-circle-play');
+        e.target.classList.add('fa-circle-pause');
+        audioElement.src = `general/songs/${index+1}.mp3`;
+        masterSongName.innerText = songs[index].songName;
+        title.innerText = songs[index].songName;
+        audioElement.currentTime = 0;
+        audioElement.play();
+        gif.style.opacity = 1;
+        masterPlay.classList.remove('fa-circle-play');
+        masterPlay.classList.add('fa-circle-pause');
+    })
+})
 //Handle play/pause click
 masterPlay.addEventListener('click', ()=>{
     if(audioElement.paused || audioElement.currentTime<=0){
@@ -72,29 +96,6 @@ audioElement.addEventListener('timeupdate', ()=>{
 
 myProgressBar.addEventListener('change', ()=>{
     audioElement.currentTime = (myProgressBar.value * audioElement.duration)/100;
-})
-
-const makeAllPlays = ()=>{
-    Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
-        element.classList.remove('fa-circle-pause');
-        element.classList.add('fa-circle-play');
-    })
-}
-Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
-    element.addEventListener('click', (e)=>{
-        makeAllPlays();
-        index = parseInt(e.target.id);
-        e.target.classList.remove('fa-circle-play');
-        e.target.classList.add('fa-circle-pause');
-        audioElement.src = `general/songs/${index+1}.mp3`;
-        masterSongName.innerText = songs[songIndex].songName;
-        title.innerText = songs[songIndex].songName;
-        audioElement.currentTime = 0;
-        audioElement.play();
-        gif.style.opacity = 1;
-        masterPlay.classList.remove('fa-circle-play');
-        masterPlay.classList.add('fa-circle-pause');
-    })
 })
 
 document.getElementById('next').addEventListener('click', ()=>{
