@@ -11,16 +11,16 @@ let title = document.getElementById('title');
 let songItems = Array.from(document.getElementsByClassName('songItem'));
 
 let songs = [
-    {songName: "Your Eyes", filePath: "general/songs/1.mp3", coverPath: "general/covers/cover1.jpg"},
-    {songName: "Play Date", filePath: "general/songs/2.mp3", coverPath: "general/covers/cover2.jpg"},
-    {songName: "SaiRat Zaale ji", filePath: "general/songs/3.mp3", coverPath: "general/covers/cover3.jpg"},
-    {songName: "Shikhayat", filePath: "general/songs/4.mp3", coverPath: "general/covers/cover4.jpg"},
-    {songName: "Love Story", filePath: "general/songs/5.mp3", coverPath: "general/covers/cover5.jpg"},
-    {songName: "Day Dreamin", filePath: "general/songs/6.mp3", coverPath: "general/covers/cover6.jpg"},
-    {songName: "Tera Chehra", filePath: "general/songs/7.mp3", coverPath: "general/covers/cover7.jpg"},
-    {songName: "Kolu Kolu", filePath: "general/songs/8.mp3", coverPath: "general/covers/cover8.jpg"},
-    {songName: "Jab Saiyaan", filePath: "general/songs/9.mp3", coverPath: "general/covers/cover9.jpg"},
-    {songName: "Naa Madhi", filePath: "general/songs/10.mp3", coverPath: "general/covers/cover10.jpg"},
+    {id: '0', songName: "Your Eyes", filePath: "general/songs/1.mp3", coverPath: "general/covers/cover1.jpg"},
+    {id: '1',songName: "Play Date", filePath: "general/songs/2.mp3", coverPath: "general/covers/cover2.jpg"},
+    {id: '2',songName: "SaiRat Zaale ji", filePath: "general/songs/3.mp3", coverPath: "general/covers/cover3.jpg"},
+    {id: '3',songName: "Shikhayat", filePath: "general/songs/4.mp3", coverPath: "general/covers/cover4.jpg"},
+    {id: '4',songName: "Love Story", filePath: "general/songs/5.mp3", coverPath: "general/covers/cover5.jpg"},
+    {id: '5',songName: "Day Dreamin", filePath: "general/songs/6.mp3", coverPath: "general/covers/cover6.jpg"},
+    {id: '6',songName: "Tera Chehra", filePath: "general/songs/7.mp3", coverPath: "general/covers/cover7.jpg"},
+    {id: '7',songName: "Kolu Kolu", filePath: "general/songs/8.mp3", coverPath: "general/covers/cover8.jpg"},
+    {id: '8',songName: "Jab Saiyaan", filePath: "general/songs/9.mp3", coverPath: "general/covers/cover9.jpg"},
+    {id: '9',songName: "Naa Madhi", filePath: "general/songs/10.mp3", coverPath: "general/covers/cover10.jpg"},
 ]
 
 
@@ -128,4 +128,42 @@ document.getElementById('previous').addEventListener('click', ()=>{
     audioElement.play();
     masterPlay.classList.remove('fa-circle-play');
     masterPlay.classList.add('fa-circle-pause');
+})
+
+//search data start
+
+let search_result = document.getElementsByClassName('search_result')[0];
+songs.forEach(element => {
+    const { id, songName, filePath, coverPath } = element;
+    let card = document.createElement('a');
+    card.classList.add('card');
+    card.href = '#' + id;
+    card.innerHTML = `
+    <img src="${coverPath}" alt="">
+        <div class="content">${songName}
+        </div>
+    `;
+    search_result.appendChild(card);
+});
+
+let input = document.getElementsByTagName('input')[0];
+input.addEventListener('keyup', ()=>{
+    let input_value = input.value.toUpperCase();
+    let items = search_result.getElementsByTagName('a');
+    for (let i = 0; i < items.length; i++) {
+        let as = items[i].getElementsByClassName('content')[0];
+        let text_value = as.textContent || as.innerText;
+
+        if (text_value.toUpperCase().indexOf(input_value) > -1) {
+            items[i].style.display = "flex";
+        } else {
+            items[i].style.display = "none";
+        }
+
+        if (input.value == 0) {
+            search_result.style.display = "none";
+        } else {
+            search_result.style.display = "";
+        }
+    }
 })
