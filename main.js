@@ -23,7 +23,19 @@ let songs = [
     {id: '9',songName: "Naa Madhi", filePath: "general/songs/10.mp3", coverPath: "general/covers/cover10.jpg"},
 ]
 
-
+let songs_list = document.getElementsByClassName('songItemContainer')[0];
+songs.forEach(element => {
+    const { id, songName, filePath, coverPath } = element;
+    let song = document.createElement('div');
+    song.classList.add('songItem');
+    song.innerHTML = `
+    <img src="${coverPath}" alt="1">
+        <span class="songName">${songName}</span>
+        <span class="songlistplay"><span class="timestamp"><i id="${id}" class="fa-regular songItemPlay fa-circle-play fa-2x"></i></span></span>
+    `;
+    songs_list.appendChild(song);
+    
+});
 songItems.forEach((element,i)=>{
     element.getElementsByTagName("img")[0].src = songs[i].coverPath;
     element.getElementsByClassName("songName")[0].innerText = songs[i].songName;
@@ -71,6 +83,19 @@ masterPlay.addEventListener('click', ()=>{
 })
 // Listen to Events
 audioElement.addEventListener('timeupdate', ()=>{
+    let curr = audioElement.currentTime;
+    let dur = audioElement.duration;
+    let min = Math.floor(dur/60);
+    let sec = Math.floor(dur%60);
+    if (sec < 10){
+        sec = `0${sec}`;
+    }
+    let min1 = Math.floor(curr/60);
+    let sec1 = Math.floor(curr%60);
+    if (sec1 < 10){
+        sec1 = `0${sec1}`;
+    }
+    document.getElementById('end').innerText=`${min1}:${sec1}/${min}:${sec}`;
     // Update Seekbar
     progress = parseInt((audioElement.currentTime/audioElement.duration)*100);
     myProgressBar.value = progress;

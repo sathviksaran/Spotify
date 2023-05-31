@@ -129,7 +129,7 @@ nav ul li a{
     cursor: pointer;
 }
 
-.songInfo{
+.songInfo {
     position: absolute;
     left: 10vw;
     font-family: 'Varela Round', sans-serif;
@@ -138,6 +138,11 @@ nav ul li a{
 .songInfo img{
     opacity: 0;
     transition: opacity 0.4s ease-in;
+}
+
+.songInfo #end{
+    position: relative;
+    left: 65vw;
 }
 
 @media only screen and (max-width: 1100px) {
