@@ -100,8 +100,16 @@ nav ul li a{
     cursor: pointer;
 }
 
-.songItemContainer{
+.songItemContainer{ 
+    height: 500px;
     margin-top: 74px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: auto;
+}
+.songItemContainer::-webkit-scrollbar{
+    display: none;
 }
 
 .songItem{
@@ -109,7 +117,7 @@ nav ul li a{
     display: flex;
     background-color: white;
     color: black;
-    margin: 12px 0;
+    margin: 5px 0;
     justify-content: space-between;
     align-items: center;
     border-radius: 34px;
@@ -117,12 +125,12 @@ nav ul li a{
 
 .songItem img{
     width: 43px;
-    margin: 0 23px;
+    margin: 0 15px;
     border-radius: 34px;
 }
 
 .timestamp{
-    margin: 0 23px;
+    margin: 0 15px;
 }
 
 .timestamp i{
@@ -272,19 +280,19 @@ nav ul .search::before{
     width: 100%;
     height: 100%;
     border-radius: 20px;
-    background: grey;
+    background: rgb(184, 184, 184, 0.1);
     backdrop-filter: blur(5px);
     z-index: -1;
   }
 nav ul .search input{
-    background: whitesmoke;
+    background: rgb(184, 184, 184, 0.1);
     outline: none;
     width: 80%;
     border: none;
     border-radius: 10px;
     padding: 0px 7px;
     margin-right: 20px;
-    color: #000000;
+    color: #fefefe;
     font-size: 16px;
   }
 
@@ -292,7 +300,6 @@ nav ul .search .search_result{
     position: absolute;  
     width: 100%;
     height: 200px;
-    /*border: 1px solid #fff;*/
     margin-top: 10px;
     border-radius: 10px;
     display: flex;
@@ -309,13 +316,16 @@ nav ul .search .search_result::-webkit-scrollbar{
 nav ul .search .search_result .card{
     width: 100%;
     min-height: 45px;
-    /*border: 1px solid #fff;*/
     display: none;
     align-items: center;
     padding: 0px 5px;
     text-decoration: none;
-    background: rgb(184, 184, 184, 0.1);
+    background: rgb(184, 184, 184, 0.5);
     margin-bottom: 5px;
+ }
+ nav ul .search .search_result .card:hover{
+    background: rgba(34, 33, 33, 0.5);
+    color: #ffffff;
  }
 
 nav ul .search .search_result .card img{
@@ -327,13 +337,16 @@ nav ul .search .search_result .card img{
 nav ul .search .search_result .card .content{
     width: 80%;
     height: 100%;
-    /*border: 1px solid #fff;*/
     padding: 0;
     font-size: 13px;
     font-weight: 600;
-    color: #fff;
+    color: #000000;
     display: flex;
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
+}
+
+nav ul .search .search_result .card .content:hover{
+    color: #ffffff;
 }
