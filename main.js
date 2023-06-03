@@ -142,6 +142,7 @@ audioElement.addEventListener('timeupdate', ()=>{
     myProgressBar.value = progress;
     if (progress==100)
     {
+        makeAllPlays();
         if (songIndex!=9)
         {
             songIndex+=1;
