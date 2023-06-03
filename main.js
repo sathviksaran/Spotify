@@ -11,17 +11,17 @@ let title = document.getElementById('title');
 let songItems = Array.from(document.getElementsByClassName('songItem'));
 
 let songs = [
-    {id: '0', songName: "Your Eyes", filePath: "general/songs/1.mp3", coverPath: "general/covers/cover1.jpg"},
-    {id: '1',songName: "Play Date", filePath: "general/songs/2.mp3", coverPath: "general/covers/cover2.jpeg"},
-    {id: '2',songName: "SaiRat Zaale ji", filePath: "general/songs/3.mp3", coverPath: "general/covers/cover3.jpg"},
-    {id: '3',songName: "Shikhayat", filePath: "general/songs/4.mp3", coverPath: "general/covers/cover4.jpg"},
-    {id: '4',songName: "Love Story", filePath: "general/songs/5.mp3", coverPath: "general/covers/cover5.jpg"},
-    {id: '5',songName: "Day Dreamin", filePath: "general/songs/6.mp3", coverPath: "general/covers/cover6.jpg"},
-    {id: '6',songName: "Tera Chehra", filePath: "general/songs/7.mp3", coverPath: "general/covers/cover7.jpeg"},
-    {id: '7',songName: "Kolu Kolu", filePath: "general/songs/8.mp3", coverPath: "general/covers/cover8.jpeg"},
-    {id: '8',songName: "Jab Saiyaan", filePath: "general/songs/9.mp3", coverPath: "general/covers/cover9.jpeg"},
-    {id: '9',songName: "Naa Madhi", filePath: "general/songs/10.mp3", coverPath: "general/covers/cover10.jpg"},
-    {id: '10',songName: "Mastaru Mastaru", filePath: "general/songs/11.mp3", coverPath: "general/covers/cover11.jpg"}
+    {id: '0', songName: "Your Eyes", filePath: "general/songs/1.mp3", coverPath: "general/covers/1.jpg"},
+    {id: '1',songName: "Play Date", filePath: "general/songs/2.mp3", coverPath: "general/covers/2.jpeg"},
+    {id: '2',songName: "SaiRat Zaale ji", filePath: "general/songs/3.mp3", coverPath: "general/covers/3.jpg"},
+    {id: '3',songName: "Shikhayat", filePath: "general/songs/4.mp3", coverPath: "general/covers/4.jpg"},
+    {id: '4',songName: "Love Story", filePath: "general/songs/5.mp3", coverPath: "general/covers/5.jpg"},
+    {id: '5',songName: "Day Dreamin", filePath: "general/songs/6.mp3", coverPath: "general/covers/6.jpg"},
+    {id: '6',songName: "Tera Chehra", filePath: "general/songs/7.mp3", coverPath: "general/covers/7.jpeg"},
+    {id: '7',songName: "Kolu Kolu", filePath: "general/songs/8.mp3", coverPath: "general/covers/8.jpeg"},
+    {id: '8',songName: "Jab Saiyaan", filePath: "general/songs/9.mp3", coverPath: "general/covers/9.jpeg"},
+    {id: '9',songName: "Naa Madhi", filePath: "general/songs/10.mp3", coverPath: "general/covers/10.jpg"},
+    {id: '10',songName: "Mastaru Mastaru", filePath: "general/songs/11.mp3", coverPath: "general/covers/11.jpg"}
 ]
 
 let songs_list = document.getElementsByClassName('songItemContainer')[0];
@@ -56,7 +56,7 @@ songs.forEach(element => {
         <i id="${id}" class="fa-regular songItemPlay fa-circle-play fa-2x"></i>
     `;
     search_result.appendChild(card);
-});
+})
 
 let input = document.getElementsByTagName('input')[0];
 input.addEventListener('keyup', ()=>{
@@ -112,6 +112,7 @@ masterPlay.addEventListener('click', ()=>{
         masterPlay.classList.add('fa-circle-pause');
         gif.style.opacity=1;
         title.innerText = songs[songIndex].songName;
+        masterSongName.innerText = songs[songIndex].songName;
     }
     else{
         makeAllPlays();
@@ -120,6 +121,7 @@ masterPlay.addEventListener('click', ()=>{
         masterPlay.classList.add('fa-circle-play');
         gif.style.opacity=0;
         title.innerText = songs[songIndex].songName;
+        masterSongName.innerText = songs[songIndex].songName;
     }
 })
 // Listen to Events
@@ -197,4 +199,29 @@ document.getElementById('previous').addEventListener('click', ()=>{
     audioElement.play();
     masterPlay.classList.remove('fa-circle-play');
     masterPlay.classList.add('fa-circle-pause');
+})
+
+let searchBox = document.querySelector(".searchbox"),
+searchIcon = document.querySelector(".icon"),
+closeIcon = document.querySelector(".close-icon");
+search_item=search_result.getElementsByTagName('a');
+searchIcon.addEventListener("click", () => {
+    searchBox.classList.add("open");
+    document.getElementById('text').placeholder="Search Music...";
+    document.getElementById('search').style.width="100%";
+    for (let i = 0; i < search_item.length; i++){
+        if (document.getElementById('text').value.length==0){
+            search_item[i].style.display="none";
+        }else{
+            search_item[i].style.display="flex";
+        }
+    }
+})
+closeIcon.addEventListener("click", () => {
+    searchBox.classList.remove("open");
+    document.getElementById('text').placeholder="";
+    document.getElementById('search').style.width="23%";
+    for (let i = 0; i < search_item.length; i++){
+        search_item[i].style.display="none";
+    }
 })

@@ -36,11 +36,16 @@
                 </div>
             </li>
             <div class="search">
-                <i class="fa-solid fa-magnifying-glass fa-1.5x"></i>
-                <input type="text" placeholder="Search Music...">
+                <div class="searchbox" id="search">
+                    <input type="text" id="text" placeholder="">
+                    <span class="icon">
+                        <i class="fa-solid fa-magnifying-glass fa-1.5x search-icon"></i>
+                    </span>
+                    <i class="fa-solid fa-xmark close-icon"></i>
+                </div>
                 <div class="search_result">
                     <!--<a href="#" class="card">
-                        <img src="general/covers/cover1.jpg" alt="">
+                        <img src="general/covers/1.jpg" alt="">
                         <div class="content">Your Eyes</div>
                     </a>-->
                 </div>
@@ -58,50 +63,16 @@
     <div class="songclassification">
         <section id="languages">
         <div class="languages">
-            <table align="center">
-                <div class="heading">
+            <div class="heading">
                 <h3 align="center">LANGUAGES</h3>
-                </div>
-                <tr>
-                    <td><input type="image" class="btn1" src="images/telugu.jpeg" onclick="window.location.href='telugu.html'" width="225"></td>
-                    <td><input type="image" class="btn1" src="images/hindi.jpeg" onclick="window.location.href='general/index.html'"></td>
-                    <td><input type="image" class="btn1" src="images/english.jpeg" onclick="window.location.href='general/index.html'"></td>
-                    <td><input type="image" class="btn1" src="images/tamil.jpeg" onclick="window.location.href='general/index.html'"></td>
-                    <td><input type="image" class="btn1" src="images/malayalam.jpeg" onclick="window.location.href='general/index.html'"></td>
-                </tr>
-            </table>
-        </div>
-        </section>
-        <section id="categories">
-        <div class="categories">
-            <table align="center">
-                <div class="heading">
-                <h3 align="center">CATEGORIES</h3>
-                </div>
-                <tr>
-                    <td><input type="image" class="btn1" src="images/telugu.jpeg" onclick="window.location.href='general/index.html'" width="225"></td>
-                    <td><input type="image" class="btn1" src="images/hindi.jpeg" onclick="window.location.href='general/index.html'"></td>
-                    <td><input type="image" class="btn1" src="images/english.jpeg" onclick="window.location.href='general/index.html'"></td>
-                    <td><input type="image" class="btn1" src="images/tamil.jpeg" onclick="window.location.href='general/index.html'"></td>
-                    <td><input type="image" class="btn1" src="images/malayalam.jpeg" onclick="window.location.href='general/index.html'"></td>
-                </tr>
-            </table>
-        </div>
-        </section>
-        <section id="albums">
-        <div class="Albums">
-            <table align="center">
-                <div class="heading">
-                <h3 align="center">ALBUMS</h3>
-                </div>
-                <tr>
-                    <td><input type="image" class="btn1" src="images/telugu.jpeg" onclick="window.location.href='general/index.html'" width="225"></td>
-                    <td><input type="image" class="btn1" src="images/hindi.jpeg" onclick="window.location.href='general/index.html'"></td>
-                    <td><input type="image" class="btn1" src="images/english.jpeg" onclick="window.location.href='general/index.html'"></td>
-                    <td><input type="image" class="btn1" src="images/tamil.jpeg" onclick="window.location.href='general/index.html'"></td>
-                    <td><input type="image" class="btn1" src="images/malayalam.jpeg" onclick="window.location.href='general/index.html'"></td>
-                </tr>
-            </table>
+            </div>
+            <div class="grid">
+                    <img class="btn1" src="images/telugu.jpeg" onclick="window.location.href='telugu.html'" width="225">
+                    <img class="btn1" src="images/hindi.jpeg" onclick="window.location.href='general/index.html'">
+                    <img class="btn1" src="images/english.jpeg" onclick="window.location.href='general/index.html'">
+                    <img class="btn1" src="images/tamil.jpeg" onclick="window.location.href='general/index.html'">
+                    <img class="btn1" src="images/malayalam.jpeg" onclick="window.location.href='general/index.html'">
+            </div>
         </div>
         </section>
     </div>
@@ -114,7 +85,7 @@
             <i class="fa-solid fa-2x fa-forward-step" id="next"></i>
         </div>
         <div class="songInfo">
-            <img src="images/playing.gif" width="30px" height="30px" alt="" id="gif"> <span id="masterSongName">Your Eyes</span> <span id="end" align="right"></span>
+            <img src="images/playing.gif" width="30px" height="30px" alt="" id="gif"> <span id="masterSongName"></span> <span id="end" align="right"></span>
         </div>
     </div>
     <script src="https://kit.fontawesome.com/5fcf5458b0.js" crossorigin="anonymous"></script>
