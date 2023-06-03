@@ -3,12 +3,14 @@ console.log("Welcome to Spotify")
 //Initialize the variables
 let songIndex = 0;
 let audioElement = new Audio('general/songs/1.mp3');
+audioElement.src='general/songs/1.mp3';
 let masterPlay = document.getElementById('masterPlay');
 let myProgressBar = document.getElementById('myProgressBar');
 let gif = document.getElementById('gif');
 let masterSongName = document.getElementById('masterSongName');
 let title = document.getElementById('title');
 let songItems = Array.from(document.getElementsByClassName('songItem'));
+let songItemPlays = Array.from(document.getElementsByClassName('songItemPlay'));
 
 let songs = [
     {id: '0', songName: "Your Eyes", filePath: "general/songs/1.mp3", coverPath: "general/covers/1.jpg"},
@@ -88,19 +90,43 @@ const makeAllPlays = ()=>{
 }
 Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
     element.addEventListener('click', (e)=>{
-        makeAllPlays();
         index = parseInt(e.target.id);
         songIndex = index;
-        e.target.classList.remove('fa-circle-play');
-        e.target.classList.add('fa-circle-pause');
-        audioElement.src = `general/songs/${index+1}.mp3`;
-        masterSongName.innerText = songs[index].songName;
-        title.innerText = songs[index].songName;
-        audioElement.currentTime = 0;
-        audioElement.play();
-        gif.style.opacity = 1;
-        masterPlay.classList.remove('fa-circle-play');
-        masterPlay.classList.add('fa-circle-pause');
+        if (audioElement.src==`http://127.0.0.1:5500/general/songs/${songIndex+1}.mp3`){
+            if(audioElement.paused){
+                e.target.classList.remove('fa-circle-play');
+                e.target.classList.add('fa-circle-pause');
+                masterSongName.innerText = songs[songIndex].songName;
+                gif.style.opacity = 1;
+                title.innerText = songs[songIndex].songName;
+                masterPlay.classList.remove('fa-circle-play');
+                masterPlay.classList.add('fa-circle-pause');
+                if (audioElement.currentTime>0){
+                    audioElement.play();
+                }
+            }else{
+                e.target.classList.remove('fa-circle-pause');
+                e.target.classList.add('fa-circle-play');
+                masterSongName.innerText = songs[songIndex].songName;
+                title.innerText = songs[songIndex].songName;
+                audioElement.pause();
+                gif.style.opacity = 0;
+                masterPlay.classList.remove('fa-circle-pause');
+                masterPlay.classList.add('fa-circle-play');
+            }
+        }else{
+            makeAllPlays();
+            audioElement.src = `general/songs/${songIndex+1}.mp3`;
+            audioElement.currentTime=0;
+            audioElement.play();
+            e.target.classList.remove('fa-circle-play');
+            e.target.classList.add('fa-circle-pause');
+            masterSongName.innerText = songs[songIndex].songName;
+            gif.style.opacity = 1;
+            title.innerText = songs[songIndex].songName;
+            masterPlay.classList.remove('fa-circle-play');
+            masterPlay.classList.add('fa-circle-pause');
+        }
     })
 })
 //Handle play/pause click
@@ -113,6 +139,8 @@ masterPlay.addEventListener('click', ()=>{
         gif.style.opacity=1;
         title.innerText = songs[songIndex].songName;
         masterSongName.innerText = songs[songIndex].songName;
+        /*songItemPlays[songIndex].classList.remove('fa-circle-play');
+        songItemPlays[songIndex].classList.add('fa-circle-pause');*/
     }
     else{
         makeAllPlays();
