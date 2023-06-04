@@ -288,7 +288,7 @@ input{
     border-radius: 25px;
     font-size: 16px;
     font-weight: 400;
-    color: #333;
+    color: #4070f4;
     background-color: #fff;
   }
 
@@ -330,7 +330,12 @@ nav ul .searchbox.open input{
 
 .searchbox.open .search-icon{
     transform: translateY(-50%) rotate(0);
+    color: #fff;
   }
+
+.searchbox.open .icon{
+    background-color: #4070f4;
+}
 
 .close-icon{
     right: -25px;
@@ -407,4 +412,8 @@ nav ul .search .search_result .card .content:hover{
 
 nav ul .search .search_result .card .songItemPlay{
     color: white;
+}
+
+nav ul .search .search_result .card .lyrics{
+    display: none;
 }
