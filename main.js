@@ -254,8 +254,3 @@ closeIcon.addEventListener("click", () => {
         search_item[i].style.display="none";
     }
 })
-
-let volicon = document.getElementsByClassName('vol-icon');
-volicon.addEventListener("mouseover", ()=>{
-    document.getElementById('volumebar').style.display="flex";
-})
