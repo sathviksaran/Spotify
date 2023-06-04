@@ -74,7 +74,7 @@ nav ul li a{
 
 .bottom{
     position: sticky;
-    height: 80px;
+    height: 85px;
     background-color: black;
     color: white;
     bottom: 0;
@@ -96,6 +96,7 @@ nav ul li a{
 #myProgressBar{
     width: 80vw;
     cursor: pointer;
+    top: 5px;
 }
 
 .songItemContainer{ 
@@ -142,13 +143,16 @@ nav ul li a{
 }
 
 .songInfo img{
+    position: relative;
     opacity: 0;
     transition: opacity 0.4s ease-in;
+    top: 20px;
 }
 
 .songInfo #end{
     position: relative;
-    left: 65vw;
+    left: 73vw;
+    top: -22px;
 }
 
 @media only screen and (max-width: 1100px) {
@@ -416,4 +420,34 @@ nav ul .search .search_result .card .songItemPlay{
 
 nav ul .search .search_result .card .lyrics{
     display: none;
+}
+
+#volumebar{
+    width: 100px;
+    top: -68px;
+    left: 160px;
+    cursor: pointer;
+    transform: rotate(270deg);
+    display: none;
+}
+
+.songInfo .vol{
+    display: flex;
+    position: relative;
+    left: 72vw;
+}
+
+.vol-icon{
+    cursor: pointer;
+    position: relative;
+    left: 14.5vw;
+}
+
+.vol-icon:hover + #volumebar{
+    display: flex;
+}
+
+.songInfo #masterSongName{
+    position: relative;
+    top: 10px;
 }
