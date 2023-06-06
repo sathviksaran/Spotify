@@ -233,7 +233,7 @@ document.getElementById('previous').addEventListener('click', ()=>{
 let searchBox = document.querySelector(".searchbox"),
 searchIcon = document.querySelector(".icon"),
 closeIcon = document.querySelector(".close-icon");
-search_item=search_result.getElementsByTagName('a');
+let search_item=search_result.getElementsByTagName('a');
 searchIcon.addEventListener("click", () => {
     searchBox.classList.add("open");
     document.getElementById('text').placeholder="Search Music...";

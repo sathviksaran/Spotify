@@ -52,6 +52,10 @@ nav ul li a{
     margin-bottom: 10px;
     align-items: center;
 }
+
+.btn1{
+    border-radius: 10px;
+}
   
 .btn1:hover {
     opacity: 0.6;
@@ -441,10 +445,6 @@ nav ul .search .search_result .card .lyrics{
     cursor: pointer;
     position: relative;
     left: 14.5vw;
-}
-
-.vol-icon:hover + #volumebar{
-    display: flex;
 }
 
 .songInfo #masterSongName{
