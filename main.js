@@ -83,6 +83,38 @@ input.addEventListener('keyup', ()=>{
     }
 })
 
+let volbar=document.getElementById('volumebar');
+let volicon=document.getElementById('vol-icon');
+audioElement.volume=volbar.value/100;
+if(volbar.value==0){
+    volicon.classList.remove('fa-volume-high','fa-volume-low');
+    volicon.classList.add('fa-volume-xmark');
+}else{
+    if(volbar.value<50){
+        volicon.classList.remove('fa-volume-high','fa-volume-xmark');
+        volicon.classList.add('fa-volume-low');
+    }else{
+        volicon.classList.remove('fa-volume-low','fa-volume-xmark');
+        volicon.classList.add('fa-volume-high');
+    }
+}
+volbar.addEventListener('change',()=>{
+    audioElement.volume=volbar.value/100;
+    console.log(volbar.classList)
+    if(volbar.value==0){
+        volicon.classList.remove('fa-volume-high','fa-volume-low');
+        volicon.classList.add('fa-volume-xmark');
+    }else{
+        if(volbar.value<50){
+            volicon.classList.remove('fa-volume-high','fa-volume-xmark');
+            volicon.classList.add('fa-volume-low');
+        }else{
+            volicon.classList.remove('fa-volume-low','fa-volume-xmark');
+            volicon.classList.add('fa-volume-high');
+        }
+    }
+})
+
 const makeAllPlays = ()=>{
     Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
         element.classList.remove('fa-circle-pause');
@@ -228,6 +260,14 @@ document.getElementById('previous').addEventListener('click', ()=>{
     audioElement.play();
     masterPlay.classList.remove('fa-circle-play');
     masterPlay.classList.add('fa-circle-pause');
+})
+
+document.getElementById('backward').addEventListener('click',()=>{
+    audioElement.playbackRate-=0.25;
+})
+
+document.getElementById('forward').addEventListener('click',()=>{
+    audioElement.playbackRate+=0.25;
 })
 
 let searchBox = document.querySelector(".searchbox"),
