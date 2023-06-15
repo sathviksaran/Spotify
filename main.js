@@ -60,6 +60,41 @@ songs.forEach(element => {
 })
 
 let input = document.getElementsByTagName('input')[0];
+let voicesearch=document.querySelector("#voice-search");
+let recg=new webkitSpeechRecognition();
+voicesearch.addEventListener('click',()=>{
+    recg.addEventListener('result',(e)=>{
+        input.value=e.results[0][0].transcript;
+    })
+    recg.addEventListener('speechend',()=>{
+        recg.stop();
+    })
+    recg.start();
+})
+
+input.addEventListener('click', ()=>{
+    let input_value = input.value.toUpperCase();
+    let items = search_result.getElementsByTagName('a');
+    for (let i = 0; i < items.length; i++) {
+        let as = items[i].getElementsByClassName('content')[0];
+        let as1 = items[i].getElementsByClassName('lyrics')[0];
+        let text_value = as.textContent || as.innerText;
+        let text_value1 = as1.textContent || as1.innerText;
+
+        if (text_value.toUpperCase().indexOf(input_value) > -1 || text_value1.toUpperCase().indexOf(input_value) > -1) {
+            items[i].style.display = "flex";
+        } else {
+            items[i].style.display = "none";
+        }
+
+        if (input.value == 0) {
+            search_result.style.display = "none";
+        } else {
+            search_result.style.display = "";
+        }
+    }
+})
+
 input.addEventListener('keyup', ()=>{
     let input_value = input.value.toUpperCase();
     let items = search_result.getElementsByTagName('a');
