@@ -21,7 +21,7 @@ let songs = [
     {id: '7', songName: "Kolu Kolu", filePath: "general/songs/8.mp3", coverPath: "general/covers/8.jpeg", lyrics: "Kolu koloo koloyamma Kommaa chivarana poolu poose kolo Puvvulaanti sinnadhemo Moggayindhi sigguthoti koloyamma"},
     {id: '8', songName: "Jab Saiyaan", filePath: "general/songs/9.mp3", coverPath: "general/covers/9.jpeg", lyrics: "Jab Saiyan Aaye Sham Ko Toh Lag Gaye Chand Mere Naam Ko Jab Saiyan Aaye Sham Ko Toh Lag Gaye Chand Mere Naam Ko"},
     {id: '9', songName: "Naa Madhi", filePath: "general/songs/10.mp3", coverPath: "general/covers/10.jpg", lyrics: "Naa Madhi Puvvadhi Vaadipothu Unnadhi Chinnadi Chey Vidi Chitrahimse Ayinadhi Ninnu Thalachuku Mathi Chediponu Devuda Ani Digulai Ten To Five Ponu Paiki Badhaga Kanabadaneee Manasu Pagilina Manishinile"},
-    {id: '10', songName: "Mastaru Mastaru", filePath: "general/songs/11.mp3", coverPath: "general/covers/11.jpg", lyrics: "Seetakalam Manasu Nee Manasuna Chotadiginde Sitakumalle Neetho Adugese Maatadiginde Neeku Nuvve Gundelone Annadantha Vinnaale Anthakanna Mundugaane Yendhuko Avunannale Inkapaina Neeku Naaku Prema Pathale"}
+    {id: '10', songName: "Mastaru Mastaru", filePath: "general/songs/11.mp3", coverPath: "general/covers/11.jpg", video:"AXSm49NGkg8", lyrics: "Seetakalam Manasu Nee Manasuna Chotadiginde Sitakumalle Neetho Adugese Maatadiginde Neeku Nuvve Gundelone Annadantha Vinnaale Anthakanna Mundugaane Yendhuko Avunannale Inkapaina Neeku Naaku Prema Pathale"}
 ]
 
 let songs_list = document.getElementsByClassName('songItemContainer')[0];
@@ -113,7 +113,6 @@ if(volbar.value==0){
 }
 volbar.addEventListener('change',()=>{
     audioElement.volume=volbar.value/100;
-    console.log(volbar.classList)
     if(volbar.value==0){
         volicon.classList.remove('fa-volume-high','fa-volume-low');
         volicon.classList.add('fa-volume-xmark');
@@ -125,6 +124,21 @@ volbar.addEventListener('change',()=>{
             volicon.classList.remove('fa-volume-low','fa-volume-xmark');
             volicon.classList.add('fa-volume-high');
         }
+    }
+})
+
+volicon.addEventListener('click',()=>{
+    let vol1=audioElement.volume;
+    if(vol1!=0){
+        audioElement.volume=0;
+        volbar.value=0;
+        volicon.classList.remove('fa-volume-high','fa-volume-low');
+        volicon.classList.add('fa-volume-xmark');
+    }else{
+        audioElement.volume=0.5;
+        volbar.value=audioElement.volume*100;
+        volicon.classList.remove('fa-volume-xmark');
+        volicon.classList.add('fa-volume-high');
     }
 })
 
@@ -169,6 +183,8 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
             e.target.classList.remove('fa-circle-play');
             e.target.classList.add('fa-circle-pause');
             masterSongName.innerText = songs[songIndex].songName;
+            let videosong=songs[songIndex].video;
+            document.getElementById('videoquery').href=`https://www.youtube.com/watch?v=${videosong}`;
             gif.style.opacity = 1;
             title.innerText = songs[songIndex].songName;
             masterPlay.classList.remove('fa-circle-play');

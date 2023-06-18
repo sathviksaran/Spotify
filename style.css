@@ -117,6 +117,16 @@ nav ul li a{
     left: 10px;
 }
 
+#play-video{
+    position: relative;
+    left: 15px;
+    color: white;
+}
+
+#play-video:hover{
+    color: red;
+}
+
 #myProgressBar{
     width: 80vw;
     cursor: pointer;
@@ -327,7 +337,6 @@ nav ul .searchbox.open{
 nav ul .searchbox.open input{
     background-color: #fff;
     border-radius: 25px;
-    place-content: "Search Music...";
 }
 
 .icon{
@@ -478,6 +487,7 @@ nav ul .search .search_result .card .lyrics{
     left: 160px;
     cursor: pointer;
     transform: rotate(270deg);
+    visibility: hidden;
 }
 
 .songInfo .vol{
@@ -490,6 +500,15 @@ nav ul .search .search_result .card .lyrics{
     cursor: pointer;
     position: relative;
     left: 14.5vw;
+}
+
+.vol-icon:hover + #volumebar{
+    visibility: visible;
+}
+
+.vol-icon:not(:hover) + #volumebar{
+    visibility: hidden;
+    transition: visibility 3s;
 }
 
 .songInfo #masterSongName{
