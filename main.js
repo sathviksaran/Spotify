@@ -142,6 +142,37 @@ volicon.addEventListener('click',()=>{
     }
 })
 
+document.onkeydown = function() {
+    switch (KeyboardEvent.keyCode) {
+       case 183:
+            KeyboardEvent.preventDefault();
+            let audio_vol = audioElement.volume;
+            if (audio_vol!=1) {
+              try {
+                  audioElement.volume = audio_vol + 0.1;
+                  volbar.value+=10;
+              }
+              catch(err) {
+                  audioElement.volume = 1;
+              }
+            }
+          break;
+       case 182:
+            KeyboardEvent.preventDefault();
+            audio_vol = audio_element.volume;
+            if (audio_vol!=0) {
+              try {
+                  audioElement.volume = audio_vol - 0.1;
+                  volbar.value-=10;
+              }
+              catch(err) {
+                  audioElement.volume = 0;
+              }
+            }
+          break;
+    }
+};
+
 const makeAllPlays = ()=>{
     Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
         element.classList.remove('fa-circle-pause');
