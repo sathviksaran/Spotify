@@ -11,16 +11,16 @@ let title = document.getElementById('title');
 let songItems = Array.from(document.getElementsByClassName('songItem'));
 
 let songs = [
-    {id: '0', songName: "Your Eyes", filePath: "general/songs/1.mp3", coverPath: "general/covers/1.jpg", lyrics: "Your eyes got my heart falling for you You're messing with my heart and I still wanna love you I wanna spend my life drowning in your eyes It's my only prayer"},
-    {id: '1', songName: "Play Date", filePath: "general/songs/2.mp3", coverPath: "general/covers/2.jpeg", lyrics: "You call me on the telephone, you feel so far away You tell me to come over, there's some games you want to play I'm walking to your house, nobody's home Just me and you and you and me alone"},
-    {id: '2', songName: "SaiRat Zaale ji", filePath: "general/songs/3.mp3", coverPath: "general/covers/3.jpg", lyrics: "alguj vaaj nabhaat bhaltach zhalay aaj algad aali manaat pahilach tarani hi laaj"},
-    {id: '3', songName: "Shikhayat", filePath: "general/songs/4.mp3", coverPath: "general/covers/4.jpg", lyrics: "Kisi Ki Yaad Mein Shaamein Guzaarne Ke Liye Kaleja Chahiye Khud Ko Maarne Ke Liye"},
-    {id: '4', songName: "Love Story", filePath: "general/songs/5.mp3", coverPath: "general/covers/5.jpg", lyrics: "We were both young when I first saw you I close my eyes and the flashback starts I'm standin' there On a balcony in summer air See the lights, see the party, the ball gowns See you make your way through the crowd And say, Hello Little did I know"},
-    {id: '5', songName: "Day Dreamin", filePath: "general/songs/6.mp3", coverPath: "general/covers/6.jpg", lyrics: "You walked in Caught my attention I've never seen A man with so much dimension"},
-    {id: '6', songName: "Tera Chehra", filePath: "general/songs/7.mp3", coverPath: "general/covers/7.jpeg", lyrics: "Meri bechainiyo ko chain mill jaye Tera chehra jab nazar aaye Tera chehra jab nazar aaye Mere diwanepan ko sabra mill jaaye Tera chehra jab nazar aaye"},
-    {id: '7', songName: "Kolu Kolu", filePath: "general/songs/8.mp3", coverPath: "general/covers/8.jpeg", lyrics: "Kolu koloo koloyamma Kommaa chivarana poolu poose kolo Puvvulaanti sinnadhemo Moggayindhi sigguthoti koloyamma"},
-    {id: '8', songName: "Jab Saiyaan", filePath: "general/songs/9.mp3", coverPath: "general/covers/9.jpeg", lyrics: "Jab Saiyan Aaye Sham Ko Toh Lag Gaye Chand Mere Naam Ko Jab Saiyan Aaye Sham Ko Toh Lag Gaye Chand Mere Naam Ko"},
-    {id: '9', songName: "Naa Madhi", filePath: "general/songs/10.mp3", coverPath: "general/covers/10.jpg", lyrics: "Naa Madhi Puvvadhi Vaadipothu Unnadhi Chinnadi Chey Vidi Chitrahimse Ayinadhi Ninnu Thalachuku Mathi Chediponu Devuda Ani Digulai Ten To Five Ponu Paiki Badhaga Kanabadaneee Manasu Pagilina Manishinile"},
+    {id: '0', songName: "Your Eyes", filePath: "general/songs/1.mp3", coverPath: "general/covers/1.jpg", video:"RzSIDoA1ZDw", lyrics: "Your eyes got my heart falling for you You're messing with my heart and I still wanna love you I wanna spend my life drowning in your eyes It's my only prayer"},
+    {id: '1', songName: "Play Date", filePath: "general/songs/2.mp3", coverPath: "general/covers/2.jpeg", video:"9jbwtx1-tw0", lyrics: "You call me on the telephone, you feel so far away You tell me to come over, there's some games you want to play I'm walking to your house, nobody's home Just me and you and you and me alone"},
+    {id: '2', songName: "SaiRat Zaale ji", filePath: "general/songs/3.mp3", coverPath: "general/covers/3.jpg", video:"AQ-P5RR7r40", lyrics: "alguj vaaj nabhaat bhaltach zhalay aaj algad aali manaat pahilach tarani hi laaj"},
+    {id: '3', songName: "Shikhayat", filePath: "general/songs/4.mp3", coverPath: "general/covers/4.jpg", video:"G-VGi8FodFs", lyrics: "Kisi Ki Yaad Mein Shaamein Guzaarne Ke Liye Kaleja Chahiye Khud Ko Maarne Ke Liye"},
+    {id: '4', songName: "Love Story", filePath: "general/songs/5.mp3", coverPath: "general/covers/5.jpg", video:"8xg3vE8Ie_E", lyrics: "We were both young when I first saw you I close my eyes and the flashback starts I'm standin' there On a balcony in summer air See the lights, see the party, the ball gowns See you make your way through the crowd And say, Hello Little did I know"},
+    {id: '5', songName: "Day Dreamin", filePath: "general/songs/6.mp3", coverPath: "general/covers/6.jpg", video:"klDwy082mNk", lyrics: "You walked in Caught my attention I've never seen A man with so much dimension"},
+    {id: '6', songName: "Tera Chehra", filePath: "general/songs/7.mp3", coverPath: "general/covers/7.jpeg", video:"i6fuIGIzaAs", lyrics: "Meri bechainiyo ko chain mill jaye Tera chehra jab nazar aaye Tera chehra jab nazar aaye Mere diwanepan ko sabra mill jaaye Tera chehra jab nazar aaye"},
+    {id: '7', songName: "Kolu Kolu", filePath: "general/songs/8.mp3", coverPath: "general/covers/8.jpeg", video:"-nDdMDAEEUc", lyrics: "Kolu koloo koloyamma Kommaa chivarana poolu poose kolo Puvvulaanti sinnadhemo Moggayindhi sigguthoti koloyamma"},
+    {id: '8', songName: "Jab Saiyaan", filePath: "general/songs/9.mp3", coverPath: "general/covers/9.jpeg", video:"jJLP6P5QaGs", lyrics: "Jab Saiyan Aaye Sham Ko Toh Lag Gaye Chand Mere Naam Ko Jab Saiyan Aaye Sham Ko Toh Lag Gaye Chand Mere Naam Ko"},
+    {id: '9', songName: "Naa Madhi", filePath: "general/songs/10.mp3", coverPath: "general/covers/10.jpg", video:"NwMaEv8qpOk", lyrics: "Naa Madhi Puvvadhi Vaadipothu Unnadhi Chinnadi Chey Vidi Chitrahimse Ayinadhi Ninnu Thalachuku Mathi Chediponu Devuda Ani Digulai Ten To Five Ponu Paiki Badhaga Kanabadaneee Manasu Pagilina Manishinile"},
     {id: '10', songName: "Mastaru Mastaru", filePath: "general/songs/11.mp3", coverPath: "general/covers/11.jpg", video:"AXSm49NGkg8", lyrics: "Seetakalam Manasu Nee Manasuna Chotadiginde Sitakumalle Neetho Adugese Maatadiginde Neeku Nuvve Gundelone Annadantha Vinnaale Anthakanna Mundugaane Yendhuko Avunannale Inkapaina Neeku Naaku Prema Pathale"}
 ]
 
@@ -142,37 +142,6 @@ volicon.addEventListener('click',()=>{
     }
 })
 
-document.onkeydown = function(eve) {
-    switch (eve.code) {
-       case '183':
-            eve.preventDefault();
-            let audio_vol = audioElement.volume;
-            if (audio_vol!=1) {
-              try {
-                  audioElement.volume = audio_vol + 0.1;
-                  volbar.value+=10;
-              }
-              catch(err) {
-                  audioElement.volume = 1;
-              }
-            }
-          break;
-       case '182':
-            eve.preventDefault();
-            audio_vol = audio_element.volume;
-            if (audio_vol!=0) {
-              try {
-                  audioElement.volume = audio_vol - 0.1;
-                  volbar.value-=10;
-              }
-              catch(err) {
-                  audioElement.volume = 0;
-              }
-            }
-          break;
-    }
-};
-
 const makeAllPlays = ()=>{
     Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
         element.classList.remove('fa-circle-pause');
@@ -275,6 +244,8 @@ audioElement.addEventListener('timeupdate', ()=>{
             songIndex=0;
         }
         audioElement.src = `general/songs/${songIndex+1}.mp3`;
+        let videosong=songs[songIndex].video;
+        document.getElementById('videoquery').href=`https://www.youtube.com/watch?v=${videosong}`;
         masterSongName.innerText = songs[songIndex].songName;
         title.innerText = songs[songIndex].songName;
         audioElement.currentTime = 0;
@@ -299,6 +270,8 @@ document.getElementById('next').addEventListener('click', ()=>{
     audioElement.src = `general/songs/${songIndex+1}.mp3`;
     masterSongName.innerText = songs[songIndex].songName;
     title.innerText = songs[songIndex].songName;
+    let videosong=songs[songIndex].video;
+    document.getElementById('videoquery').href=`https://www.youtube.com/watch?v=${videosong}`;
     audioElement.currentTime = 0;
     audioElement.play();
     masterPlay.classList.remove('fa-circle-play');
@@ -314,6 +287,8 @@ document.getElementById('previous').addEventListener('click', ()=>{
     }
     makeAllPlays();
     audioElement.src = `general/songs/${songIndex+1}.mp3`;
+    let videosong=songs[songIndex].video;
+    document.getElementById('videoquery').href=`https://www.youtube.com/watch?v=${videosong}`;
     masterSongName.innerText = songs[songIndex].songName;
     title.innerText = songs[songIndex].songName;
     audioElement.currentTime = 0;
