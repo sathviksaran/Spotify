@@ -197,6 +197,8 @@ masterPlay.addEventListener('click', ()=>{
     if(audioElement.paused || audioElement.currentTime<=0){
         makeAllPlays();
         audioElement.play();
+        let videosong=songs[songIndex].video;
+        document.getElementById('videoquery').href=`https://www.youtube.com/watch?v=${videosong}`;
         masterPlay.classList.remove('fa-circle-play');
         masterPlay.classList.add('fa-circle-pause');
         gif.style.opacity=1;
