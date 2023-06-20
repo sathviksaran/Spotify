@@ -142,10 +142,10 @@ volicon.addEventListener('click',()=>{
     }
 })
 
-document.onkeydown = function() {
-    switch (KeyboardEvent.keyCode) {
-       case 183:
-            KeyboardEvent.preventDefault();
+document.onkeydown = function(eve) {
+    switch (eve.code) {
+       case '183':
+            eve.preventDefault();
             let audio_vol = audioElement.volume;
             if (audio_vol!=1) {
               try {
@@ -157,8 +157,8 @@ document.onkeydown = function() {
               }
             }
           break;
-       case 182:
-            KeyboardEvent.preventDefault();
+       case '182':
+            eve.preventDefault();
             audio_vol = audio_element.volume;
             if (audio_vol!=0) {
               try {
