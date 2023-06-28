@@ -125,6 +125,7 @@ nav ul li a{
 
 #play-video:hover{
     color: red;
+    background: #fff;
 }
 
 #myProgressBar{
