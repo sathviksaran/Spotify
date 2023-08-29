@@ -5,7 +5,7 @@ body{
     background-color: antiquewhite;
 }
 
-nav{
+/*nav{
     font-family: 'Ubuntu', sans-serif;
 }
 
@@ -32,9 +32,9 @@ nav ul li a{
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-}
+}*/
 
-.brand img{
+/*.brand img{
     width: 44px;
     padding: 0 8px;
 }
@@ -44,6 +44,10 @@ nav ul li a{
     align-items: center;
     font-weight: bolder;
     font-size: 1.3rem;
+}*/
+
+.logo{
+    width: 50px;
 }
 
 .grid{
@@ -195,7 +199,7 @@ nav ul li a{
     }
 }
 
-.dropdown {
+/*.dropdown {
     float: left;
     overflow: hidden;
   }
@@ -240,6 +244,10 @@ nav ul li a{
   
   .dropdown:hover .dropdown-content {
     display: block;
+  }*/
+
+  .link{
+    font-size: 18px;
   }
 
   .songclassification{
