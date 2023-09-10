@@ -88,7 +88,7 @@ songs.forEach(element => {
     search_result.appendChild(card);
 })
 
-let input = document.getElementsByTagName('input')[0];
+/*let input = document.getElementsByTagName('input')[0];
 let voicesearch=document.querySelector("#voice-search");
 let recg=new webkitSpeechRecognition();
 voicesearch.addEventListener('click',()=>{
@@ -100,9 +100,9 @@ voicesearch.addEventListener('click',()=>{
         recg.stop();
     })
     recg.start();
-})
+})*/
 
-input.addEventListener('keyup', ()=>{
+/*input.addEventListener('keyup', ()=>{
     let input_value = input.value.toUpperCase();
     let items = search_result.getElementsByTagName('a');
     for (let i = 0; i < items.length; i++) {
@@ -123,7 +123,7 @@ input.addEventListener('keyup', ()=>{
             search_result.style.display = "";
         }
     }
-})
+})*/
 
 let volbar=document.getElementById('volumebar');
 let volicon=document.getElementById('vol-icon');
@@ -343,7 +343,7 @@ let searchBox = document.querySelector(".searchbox"),
 searchIcon = document.querySelector(".icon"),
 closeIcon = document.querySelector(".close-icon");
 let search_item=search_result.getElementsByTagName('a');
-searchIcon.addEventListener("click", () => {
+/*searchIcon.addEventListener("click", () => {
     searchBox.classList.add("open");
     document.getElementById('text').placeholder="Search Music...";
     document.getElementById('search').style.width="100%";
@@ -362,4 +362,4 @@ closeIcon.addEventListener("click", () => {
     for (let i = 0; i < search_item.length; i++){
         search_item[i].style.display="none";
     }
-})
+})*/
