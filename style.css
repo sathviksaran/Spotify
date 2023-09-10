@@ -5,11 +5,11 @@ body{
     background-color: antiquewhite;
 }
 
-/*nav{
+nav{
     font-family: 'Ubuntu', sans-serif;
-}*/
+}
 
-/*nav .search-card{
+nav ul{
     display: flex;
     align-items: center;
     list-style-type: none;
@@ -19,10 +19,31 @@ body{
     margin: 23px auto;
     width: 92%;
     border-radius: 12px;
-}*/
+}
 
-.logo{
-    width: 50px;
+nav ul li{
+    padding: 0 12px;
+}
+
+nav ul li a{
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.brand img{
+    width: 44px;
+    padding: 0 8px;
+}
+
+.brand{
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.3rem;
 }
 
 .grid{
@@ -52,6 +73,7 @@ body{
     border-radius: 12px;
     padding: 34px;
     background-image: url('images/bg.jpg');
+    background-image: image();
 }
 
 .bottom{
@@ -174,7 +196,7 @@ body{
     }
 }
 
-/*.dropdown {
+.dropdown {
     float: left;
     overflow: hidden;
   }
@@ -219,10 +241,6 @@ body{
   
   .dropdown:hover .dropdown-content {
     display: block;
-  }*/
-
-  .link{
-    font-size: 18px;
   }
 
   .songclassification{
@@ -249,6 +267,30 @@ body{
     padding: 0px;
 }
 
+/*.songclassification .categories{
+    min-height: 30vh;
+    background-color: whitesmoke;
+    color: white;
+    font-family: 'Varela Round', sans-serif;
+    display: table;
+    margin: 15px auto;
+    width: 80%;
+    border-radius: 12px;
+    padding: 0px;
+}
+
+.songclassification .Albums{
+    min-height: 30vh;
+    background-color: whitesmoke;
+    color: white;
+    font-family: 'Varela Round', sans-serif;
+    display: table;
+    margin: 15px auto;
+    width: 80%;
+    border-radius: 12px;
+    padding: 0px;
+}*/
+
 h3 {
     color: crimson;
     font-weight: bolder;
@@ -261,7 +303,7 @@ h3 {
     margin: 10px 40px;
 }
 
-/*.searchbox{
+.searchbox{
     position: relative;
     height: 35px;
     max-width: 55px;
@@ -352,7 +394,7 @@ nav ul .searchbox.open input{
     opacity: 1;
     pointer-events: auto;
     transform: translateY(-50%) rotate(180deg);
-  }*/
+  }
 
   .voice-search{
     position: relative;
@@ -380,13 +422,14 @@ nav ul .search .search_result{
     position: absolute;  
     width: 26%;
     height: 200px;
-    margin-top: 50px;
+    margin-top: 10px;
     border-radius: 10px;
     display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
     flex-direction: column;
     overflow: auto;
-    overflow-y: hidden;
-    left: 65%;
+    left: 42%;
  }
 
 nav ul .search .search_result::-webkit-scrollbar{
@@ -396,40 +439,43 @@ nav ul .search .search_result::-webkit-scrollbar{
 nav ul .search .search_result .card{
     width: 100%;
     min-height: 45px;
+    display: none;
+    align-items: center;
     padding: 0px 5px;
     text-decoration: none;
-    background: rgba(252, 251, 251, 0.9);
+    background: rgba(184, 184, 184, 0.514);
     margin-bottom: 5px;
  }
 
+nav ul .search .search_result .card:hover{
+    background: rgba(34, 33, 33, 0.5);
+ }
+
 nav ul .search .search_result .card img{
-    position: relative;
     width: 35px;
     height: 35px;
     border-radius: 5px;
-    top: 5px;
 }
 
 nav ul .search .search_result .card .content{
-    position: relative;
     width: 80%;
     height: 100%;
-    font-size: 15px;
+    padding: 0;
+    font-size: 13px;
     font-weight: 600;
-    color: black;
-    top: -25px;
-    left: 45px;
+    color: white;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
 }
 
 nav ul .search .search_result .card .content:hover{
-    color: #052af9;
+    color: #090ded;
 }
 
 nav ul .search .search_result .card .songItemPlay{
-    position: absolute;
-    color: black;
-    right: 2%;
-    top: -45px;
+    color: white;
 }
 
 nav ul .search .search_result .card .lyrics{
